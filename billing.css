@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #123c69;
+    color: white;
+    padding: 25px 15px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 14px;
+    margin: 7px 0;
+    border: none;
+    border-radius: 6px;
+    background: #1d5d96;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
+}
+
+.sidebar button:hover {
+    background: #2878bb;
+}
+
+.main {
+    margin-left: 250px;
+    padding: 30px;
+    width: calc(100% - 250px);
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+h1,
+h2 {
+    color: #123c69;
+    margin-bottom: 18px;
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+.cards,
+.summary-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.cards {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card,
+.summary-box,
+.form-box,
+.bill-summary {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+}
+
+.card h3 {
+    color: #555;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #1769aa;
+    margin-top: 10px;
+}
+
+.summary-box {
+    margin-top: 30px;
+}
+
+.summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.summary-grid div {
+    background: #f4f7fb;
+    padding: 18px;
+    border-radius: 8px;
+}
+
+.summary-grid span {
+    display: block;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.summary-grid strong {
+    color: #1769aa;
+    font-size: 20px;
+}
+
+.form-box {
+    margin-bottom: 20px;
+}
+
+input,
+select {
+    padding: 12px;
+    margin: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 220px;
+}
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #1769aa;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0d4f82;
+}
+
+.charge-row,
+.tax-row,
+.insurance-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 10px 0;
+}
+
+.charge-row label,
+.tax-row label,
+.insurance-row label {
+    font-weight: bold;
+    color: #444;
+}
+
+.bill-summary {
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+.bill-line,
+.grand-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+.bill-line {
+    color: #555;
+}
+
+.bill-line strong,
+.grand-total {
+    color: #123c69;
+}
+
+.insurance-text {
+    color: green !important;
+}
+
+.bill-summary hr {
+    margin: 15px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+.grand-total {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.grand-total strong {
+    color: #1769aa;
+}
+
+.payment-section {
+    margin-top: 20px;
+}
+
+.payment-section select {
+    width: 250px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+}
+
+th {
+    background: #123c69;
+    color: white;
+    padding: 13px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #f1f7fc;
+}
+
+.status-pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-approved {
+    color: green;
+    font-weight: bold;
+}
+
+.status-rejected {
+    color: red;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .main {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        display: block;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .cards,
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    input,
+    select {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    .charge-row,
+    .tax-row,
+    .insurance-row {
+        display: block;
+    }
+
+    table {
+        font-size: 11px;
+    }
+}
